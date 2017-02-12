@@ -1,0 +1,122 @@
+
+
+.panel-cyan {
+    border-color: #9ed3ee;
+}
+
+    .panel-cyan > .panel-heading {
+        color: #fff;
+        background-color: #1BA1E2;
+        border-color: #9ed3ee;
+    }
+
+        .panel-cyan > .panel-heading + .panel-collapse > .panel-body {
+            border-top-color: #9ed3ee;
+        }
+
+        .panel-cyan > .panel-heading .badge {
+            color: #fff;
+            background-color: #1BA1E2;
+        }
+
+    .panel-cyan > .panel-footer + .panel-collapse > .panel-body {
+        border-bottom-color: #9ed3ee;
+    }
+
+
+
+
+.panel-orange {
+    border-color: #ff6a00;
+}
+
+    .panel-orange > .panel-heading {
+        color: #fff;
+        background-color: #FA6800;
+        border-color: #ff6a00;
+    }
+
+        .panel-orange > .panel-heading + .panel-collapse > .panel-body {
+            border-top-color: #ff6a00;
+        }
+
+        .panel-orange > .panel-heading .badge {
+            color: #fff;
+            background-color: #FA6800;
+        }
+
+    .panel-orange > .panel-footer + .panel-collapse > .panel-body {
+        border-bottom-color: #ff6a00;
+    }
+
+.mar-0 {
+    margin: 0;
+}
+
+.bg-gray {
+    background-color: #eeeeee;
+}
+
+.table-no-border > tbody > tr > td {
+    border: none;
+}
+
+
+.mar-left-10 {
+    margin-left: 10px;
+}
+
+.mar-left-20 {
+    margin-left: 20px;
+}
+
+.mar-left-50 {
+    margin-left: 50px;
+}
+
+.mar-left-100 {
+    margin-left: 100px;
+}
+
+
+
+.none {
+    background-image: url("../images/quiz_radio_none.png");
+    cursor: pointer;
+    display: inline-block;
+    /*float: left;*/
+    height: 25px;
+    margin-right: 20px;
+    vertical-align: middle;
+    width: 26px;
+}
+
+.selected {
+    background-image: url("../images/quiz_radio_selected.png");
+    cursor: pointer;
+    display: inline-block;
+    /*float: left;*/
+    height: 25px;
+    margin-right: 20px;
+    vertical-align: middle;
+    width: 26px;
+}
+
+
+.loading {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1111110;
+    background-color: rgba(35, 44, 115, 0.5);
+    background: rgba(35, 44, 115, 0.5);
+    color: rgba(35, 44, 115, 0.5);
+}
+
+    .loading img {
+        position: absolute;
+        left: 30%;
+        top: 20%;
+        width: 50%;
+    }

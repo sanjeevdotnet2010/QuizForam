@@ -1,40 +1,165 @@
 ﻿<!DOCTYPE html>
-<html>
+<html class="no-js" ng-app="ExamAdmin">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title> @ViewBag.Title </title>
+    <!-- Bootstrap -->
+    <link href='@Url.Content("~/Content/bootstrap.css")' rel="stylesheet" media="screen" />
+    <link href='@Url.Content("~/Content/style.css")' rel="stylesheet" media="screen" />
+    <link href='@Url.Content("~/Content/screen.css")' rel="stylesheet" media="screen" />
+    <link href='@Url.Content("~/css/font-awesome.css")' rel="stylesheet" />
+    <link href='@Url.Content("~/Content/jquery.dataTables.min.css")' rel="stylesheet" />
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <link href='@Url.Content("~/Content/sweetalert/sweet-alert.css")' rel="stylesheet" />
+    <script src='@Url.Content("~/Scripts/sweet-alert.js")'></script>
+    <script src='@Url.Content("~/scripts/jquery-1.10.2.js")'></script>
+    <script src='@Url.Content("~/scripts/bootstrap.min.js")'></script>
+    <script src='@Url.Content("~/Scripts/jquery.dataTables.min.js")'></script>
+    <script src='@Url.Content("~/Scripts/Class.js")'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+    <script src='@Url.Content("~/Scripts/jquery.validate.min.js")'></script>
+
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+
+<body style="padding-top: 60px; padding-bottom:60px;">
+
+    <div id="loderimg" style="display: none; position: fixed; height: 100%; width: 100%; z-index: 1111110; background-color: rgba(35, 44, 115, 0.5); background: rgba(35, 44, 115, 0.5); color: rgba(35, 44, 115, 0.5)">
+        <img src="~/Images/document-loader.gif" alt="" style="position: absolute; left: 30%; top: 20%">
+    </div>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand " href="@Url.Action("Dashboard","Home")">Admin Panal</a>
             </div>
-            <div class="navbar-collapse collapse">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+
+                    @if (Session["CAMPUS"] != null && Session["CAMPUS"].ToString() != "")
+                    {
+
+                        <li><a href="@Url.Action("Index", "Stream")">Stream</a></li>
+                        <li><a href="@Url.Action("Index","Program")">Program</a></li>
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">User<b class="caret"></b></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Administrator")">Administrator</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Student")">Student</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Question<b class="caret"></b></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Question", new { Stream = 1 })">Question</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Essay")">Essay(Comprehensive) Question</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Test<b class="caret"></b></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="@Url.Action("Index","Section")">Test</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Result")">Result</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Question<b class="caret"></b></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Question", new { Stream = 1 })">Question</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Essay")">Essay(Comprehensive) Question</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right ">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-user" title="Logout"></span> @Session["admname"] <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Logout","login")"><span class="fa fa-power-off" title="Logout"></span> Logout </a></li>
+
+                        </ul>
+                    </li>
+                    <li class="col"></li>
                 </ul>
             </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-sm-12">
+
+                @if (!string.IsNullOrEmpty(ViewBag.danger))
+                {
+                    <script>
+                        window.setTimeout(function () { $(".alert-danger").slideUp(500, function () { $(this).remove(); }); }, 3000);
+                    </script>
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        @ViewBag.danger
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(ViewBag.success))
+                {
+                    <script>
+                        window.setTimeout(function () { $(".alert-success").slideUp(500, function () { $(this).remove(); }); }, 3000);
+                    </script>
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        @ViewBag.success
+                    </div>
+                }
+
+                @RenderBody()
+
+
+
+
+
+            </div>
+        </div>
+
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <nav class="navbar navbar-inverse navbar-fixed-bottom ">
+        <div class="navbar-header">
+            <a class="navbar-brand " href="#"> &copy; Powered by- Sanjeev & Pratush </a>
+        </div>
+    </nav>
+    <!--/.fluid-container-->
     @RenderSection("scripts", required: false)
 </body>
 </html>

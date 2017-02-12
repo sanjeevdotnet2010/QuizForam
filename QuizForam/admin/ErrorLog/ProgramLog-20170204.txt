@@ -1,0 +1,102 @@
+Datetime of Error : 2/4/2017 6:18:35 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable) 
+Error  : ExecuteReader: CommandText property has not been initialized
+
+
+Datetime of Error : 2/4/2017 6:20:15 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : ExecuteReader: CommandText property has not been initialized
+
+
+Datetime of Error : 2/4/2017 6:22:30 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:34 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:36 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:37 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:57 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:58 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:58 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:58 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:58 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:59 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:59 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:22:59 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure Proc_PlanMater has no parameters and arguments were supplied.
+
+
+Datetime of Error : 2/4/2017 6:24:41 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure or function 'Proc_PlanMater' expects parameter '@Mode', which was not supplied.
+
+
+Datetime of Error : 2/4/2017 6:25:55 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure or function 'Proc_PlanMater' expects parameter '@Mode', which was not supplied.
+
+
+Datetime of Error : 2/4/2017 10:08:15 PM
+Page Url:   http://localhost:50883/admin/plan/index
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Procedure or function 'Proc_PlanMater' expects parameter '@PlanId', which was not supplied.
+
+

@@ -1,0 +1,156 @@
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------- */
+/*  Login
+/* ---------------------------------------------------------------------- */
+body.login-body {
+    overflow: visible;
+}
+
+body.login-body {
+    background-image: url("../images/bg.png");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+    body.login-body .main-login {
+        margin-top: 60px;
+        position: relative;
+    }
+
+    body.login-body .logo {
+        padding: 2px;
+        text-align: center;
+    }
+
+    body.login-body .admin-login-widget, body.login-body .admin-widget-forgot, body.login-body .admin-widget-register {
+        background: #FFFFFF;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 15px;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+    }
+
+.logo img {
+    display: block;
+    width: 100%;
+}
+
+body.login-body .admin-admin-login-widget, body.login-body .admin-widget-forgot, body.login-body .admin-widget-register {
+    display: none;
+}
+
+body.login-body .form fieldset {
+    border: none;
+    margin: 0;
+    padding: 10px 0 0;
+}
+
+body.login-body a.forgot-pass {
+    color: #909090;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    top: 9px;
+}
+
+body.login-body input.password {
+    padding-right: 130px;
+}
+
+body.login-body label {
+    color: #7F7F7F;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+body.login-body .copyright {
+    font-size: 11px;
+    margin: 0 auto;
+    padding: 10px 10px 0;
+    text-align: center;
+}
+
+body.login-body .form-actions:before, body.login-body .form-actions:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+body.login-body .form-actions:after {
+    clear: both;
+}
+
+body.login-body .form-actions {
+    margin-top: 15px;
+    padding-top: 10px;
+    display: block;
+}
+
+body.login-body .new-account {
+    border-top: 1px dotted #EEEEEE;
+    margin-top: 15px;
+    padding-top: 10px;
+    display: block;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.no-display {
+    display: none;
+}
+
+form-group {
+    position: relative;
+}
+
+.form-group .text {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 7px;
+}
+
+.information-frm {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+span.input-icon, span.input-help {
+    display: block;
+    position: relative;
+}
+
+.input-icon > [class*="fa-"], .input-icon > [class*="clip-"], .input-icon > [class*="pass-logo"] {
+    bottom: 0;
+    color: #909090;
+    display: inline-block;
+    font-size: 14px;
+    left: 5px;
+    line-height: 35px;
+    padding: 0 3px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+.input-icon > input {
+    padding-left: 32px;
+    padding-right: 6px;
+}

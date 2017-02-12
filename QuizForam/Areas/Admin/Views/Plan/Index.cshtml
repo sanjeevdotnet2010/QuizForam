@@ -1,0 +1,92 @@
+﻿@model IEnumerable<QuizForam.Areas.Admin.Models.Plan>
+
+@{
+    ViewBag.Title = "Plan Master";
+}
+
+
+<script src='@Url.Content("~/Areas/Admin/Script/plan.js")'></script>
+
+<h4 class="heading_a uk-margin-bottom"> Plan </h4>
+<div class="md-card uk-margin-medium-bottom">
+    <div class="md-card-content">
+        <div class="uk-grid" data-uk-grid-margin>
+            <div class="uk-width-medium-1-2">
+            </div>
+            <div class="uk-width-medium-1-4">
+
+            </div>
+            <div class="uk-width-medium-1-4">
+                <a class="md-btn md-btn-primary md-btn-block md-btn-wave-light" id="BtnAddPlan" href="#">Add New Plan</a>
+            </div>
+        </div>
+        <table id="DataTable" class="uk-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.PlanName)</th>
+                    <th>@Html.DisplayNameFor(model => model.ActiveDay)</th>
+                    <th>@Html.DisplayNameFor(model => model.GracePeriod)</th>
+                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    <th>@Html.DisplayNameFor(model => model.Active)</th>
+                    <th>@Html.DisplayNameFor(model => model.CreatedBy)</th>
+                    <th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.PlanName)</th>
+                    <th>@Html.DisplayNameFor(model => model.ActiveDay)</th>
+                    <th>@Html.DisplayNameFor(model => model.GracePeriod)</th>
+                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    <th>@Html.DisplayNameFor(model => model.Active)</th>
+                    <th>@Html.DisplayNameFor(model => model.CreatedBy)</th>
+                    <th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.PlanName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActiveDay)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GracePeriod)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Active)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedOn)</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PlanId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.PlanId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PlanId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <button class="md-btn" data-uk-modal="{target:'#modal_header_footer'}">Open</button>
+        <div class="uk-modal" id="FormModal">
+            <div class="uk-modal-dialog">
+                <div class="uk-modal-header">
+                    <h3 class="uk-modal-title">Headline</h3>
+                </div>
+               
+                <div id="DivForm">
+
+
+
+                </div>
+                <div class="uk-modal-footer uk-text-right">
+                    <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button><button type="button" class="md-btn md-btn-flat md-btn-flat-primary">Action</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
