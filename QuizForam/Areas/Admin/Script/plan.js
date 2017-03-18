@@ -1,15 +1,24 @@
 ﻿
 $(document).ready(function () {
 
-
-    individual_search_table('DataTable');
+    var oTable = $('#DataTable').dataTable({
+       "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "sScrollY": "305px",
+    });
 
 
 
     $("#BtnAddPlan").click(function () {
-        alert('sanjeev');
-        $("#FormModal").show();
-        $("#DivForm").load("Create.cshtml");
+   
+
+        $.ajax({
+            url: "../admin/plan/Create", 
+            type: "GET", dataType: "html",
+            success: function (data) {
+                $("#FormModal").modal('show');
+                $("#DivForm").html(data);
+            }
+        });
 
     });
 
