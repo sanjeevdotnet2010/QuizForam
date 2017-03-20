@@ -10,8 +10,7 @@ namespace QuizForam.Areas.Admin.Models
     {
 
         public int PlanId { get; set; }
-        [       DisplayName("Plan Name"),
-            DataType(DataType.Password)]
+        [DisplayName("Plan Name"), DataType(DataType.Password)]
         public string PlanName { get; set; }
         public int ActiveDay { get; set; }
         public int GracePeriod { get; set; }

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Plan Master";
+    var rdioid = 0;
 }
 
 
@@ -23,31 +24,38 @@
                     <table id="DataTable" class="table table-striped table-bordered ">
                         <thead>
                             <tr class="bg-danger ">
+                                <th>#</th>
                                 <th>@Html.DisplayNameFor(model => model.PlanName)</th>
                                 <th>@Html.DisplayNameFor(model => model.ActiveDay)</th>
                                 <th>@Html.DisplayNameFor(model => model.GracePeriod)</th>
                                 <th>@Html.DisplayNameFor(model => model.Price)</th>
                                 <th>@Html.DisplayNameFor(model => model.Active)</th>
-                                <th>@Html.DisplayNameFor(model => model.CreatedBy)</th>
                                 <th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
-                                <th>Action</th>
+                                <th>Edit</th>
+                                <th>Deactve</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
+                                rdioid = rdioid + 1;
                                 <tr>
+                                    <td>@rdioid</td>
                                     <td>@Html.DisplayFor(modelItem => item.PlanName)</td>
                                     <td>@Html.DisplayFor(modelItem => item.ActiveDay)</td>
                                     <td>@Html.DisplayFor(modelItem => item.GracePeriod)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Price)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Active)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
                                     <td>@Html.DisplayFor(modelItem => item.CreatedOn)</td>
                                     <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.PlanId }) |
-                                        @Html.ActionLink("Details", "Details", new { id = item.PlanId }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.PlanId })
+                                        <button class="btn btn-info btn-xs" onclick="EditPlanForm('@item.PlanId')"><span class="fa fa-edit fa"></span> Edit </button>
+                                    </td>
+                                    <td>
+                                        @using (Html.BeginForm("Delete", "Stream", FormMethod.Post, new { id = "form" + item.PlanId, name = "form" + item.PlanId }))
+                                        {
+                                            <input type="hidden" name="ID" value="@item.PlanId" />
+                                            <button type="button" class="btn btn-danger btn-xs" onclick="javascript: return DeletePlan('@item.PlanId','@item.PlanName'); "><span class="fa fa-close fa"></span> Delete</button>
+                                        }
                                     </td>
                                 </tr>
                             }
@@ -63,7 +71,7 @@
 
 
 <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog " role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div id="DivForm"></div>
         </div>

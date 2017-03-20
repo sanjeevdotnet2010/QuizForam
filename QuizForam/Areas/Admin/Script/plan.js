@@ -1,18 +1,20 @@
 ﻿
 $(document).ready(function () {
 
-    var oTable = $('#DataTable').dataTable({
-       "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-        "sScrollY": "305px",
+    var tablehight = ($(window).height() - 315);
+    //swal(tablehight+"Px");
+    $('#DataTable').dataTable({
+        "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "sScrollY": tablehight + "Px"
     });
 
 
 
     $("#BtnAddPlan").click(function () {
-   
+
 
         $.ajax({
-            url: "../admin/plan/Create", 
+            url: "Create",
             type: "GET", dataType: "html",
             success: function (data) {
                 $("#FormModal").modal('show');

@@ -13,8 +13,6 @@ namespace QuizForam.Areas.Admin.Controllers
         // GET: Admin/Plan
         public ActionResult Index()
         {
-            TempData["danger"] = "Sanjeev";
-            TempData["success"] = "Sanjeev";
             ViewBag.danger = TempData["danger"];
             ViewBag.success = TempData["success"];
             TempData["danger"] = null;
@@ -54,9 +52,10 @@ namespace QuizForam.Areas.Admin.Controllers
         }
 
         // GET: Admin/Plan/Edit/5
-        public ActionResult Edit(int id)
+        public PartialViewResult Edit(int id)
         {
-            return View();
+            PlanDetails 
+            return PartialView();
         }
 
         // POST: Admin/Plan/Edit/5
