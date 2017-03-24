@@ -17,7 +17,7 @@ namespace QuizForam.Areas.Admin.Controllers
         public DataSet ds1, ds2;
         DataTable dtloc;
         DataSet dsLoc;
-        public string strSQL = "", str="";
+        public string strSQL = "", str = "";
         // GET: Admin/Master
 
 
@@ -31,16 +31,27 @@ namespace QuizForam.Areas.Admin.Controllers
             return dtloc;
         }
 
-        public DataTable GetPlanById(Plan model)
+        public Plan GetPlanById(Plan model)
         {
             pcol = new DbSqlParameterCollection();
             DbSqlParameter p1 = new DbSqlParameter("Mode", "2"); pcol.Add(p1);
             DbSqlParameter p2 = new DbSqlParameter("PlanId", model.PlanId); pcol.Add(p2);
-            dtloc = DAL.GetDataTable("Proc_PlanMater", pcol);         
-            return dtloc;
+            dtloc = DAL.GetDataTable("Proc_PlanMater", pcol);
+
+
+            if (dtloc.Rows.Count > 0)
+            {
+                model.PlanName = dtloc.Rows[0]["PlanName"].ToString();
+                model.GracePeriod = Convert.ToInt32(dtloc.Rows[0]["GracePeriod"].ToString());
+                model.ActiveDay = Convert.ToInt32(dtloc.Rows[0]["ActiveDay"].ToString());
+                model.Price = Convert.ToInt32(dtloc.Rows[0]["Price"].ToString());
+                model.Active = Convert.ToBoolean(dtloc.Rows[0]["Active"].ToString());
+            }
+
+            return model;
         }
         public string SavePlan(Plan model)
-        {      
+        {
             return str;
         }
         public string UpdatePlan(Plan model)

@@ -1,23 +1,21 @@
 ﻿@model QuizForam.Areas.Admin.Models.Plan
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "plan", FormMethod.Post, new { @id = "formCreate", @name = "formCreate" }))
 {
-
-    @Html.AntiForgeryToken()
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="text-danger">Edit Plan </span></h4>
+        <h4 class="modal-title" id="myModalLabel"><span class="text-danger">Add Plan </span></h4>
     </div>
 
     <div class="modal-body custom-body">
 
-        <div class="form-horizontal">
-            <h4>Plan</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.PlanId)
 
+
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.PlanName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -53,45 +51,35 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Active, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Active)
-                        @Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CreatedOn, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CreatedOn, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CreatedOn, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    @Html.EditorFor(model => model.Active, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
-
     </div>
     <div class="modal-footer" style="text-align:center !important">
 
-        <input type="submit" value="Create" class="btn btn-success" />
+        <button type="button" class="btn btn-primary" id="BtnCreate">Create</button>
+        <button type="submit" id="finalSubmit" style="display:none">  </button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
     </div>
 }
 
+<script>
+    $(document).ready(function () {
+        $("#BtnCreate").click(function () {
+          
+            if ($("#formCreate").valid()) {
+                alert('123')
+               $("#finalSubmit").click();
+            }
+            else {
+                return false;
+            }
 
+        });
+    });
+</script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

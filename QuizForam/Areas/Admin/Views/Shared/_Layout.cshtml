@@ -16,17 +16,18 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script src='@Url.Content("~/scripts/jquery-1.10.2.js")'></script>
 
     <link href='@Url.Content("~/Content/sweetalert/sweet-alert.css")' rel="stylesheet" />
     <script src='@Url.Content("~/Scripts/sweet-alert.js")'></script>
-    <script src='@Url.Content("~/scripts/jquery-1.10.2.js")'></script>
     <script src='@Url.Content("~/scripts/bootstrap.min.js")'></script>
     <script src='@Url.Content("~/Scripts/jquery.dataTables.min.js")'></script>
     <script src='@Url.Content("~/Scripts/Class.js")'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 
+   
     <script src='@Url.Content("~/Scripts/jquery.validate.min.js")'></script>
-
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
 
 </head>
 
@@ -54,10 +55,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    @if (Session["CAMPUS"] != null && Session["CAMPUS"].ToString() != "")
-                    {
+                    
 
-                        <li><a href="@Url.Action("Index", "Stream")">Stream</a></li>
+                        <li><a href="@Url.Action("Index", "Plan")">Plan</a></li>
                         <li><a href="@Url.Action("Index","Program")">Program</a></li>
 
                         <li class="dropdown">
@@ -84,9 +84,7 @@
                                 <li><a href="@Url.Action("Index", "Result")">Result</a></li>
                             </ul>
                         </li>
-                    }
-                    else
-                    {
+                    
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Question<b class="caret"></b></a>
                             <ul role="menu" class="dropdown-menu">
@@ -95,14 +93,14 @@
                                 <li><a href="@Url.Action("Index", "Essay")">Essay(Comprehensive) Question</a></li>
                             </ul>
                         </li>
-                    }
+                    
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right ">
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <span class="fa fa-user" title="Logout"></span> @Session["admname"] <span class="caret"></span>
+                            <span class="fa fa-user" title="Logout"></span> @Session["Name"] <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="@Url.Action("Logout","login")"><span class="fa fa-power-off" title="Logout"></span> Logout </a></li>
@@ -160,6 +158,6 @@
         </div>
     </nav>
     <!--/.fluid-container-->
-    @RenderSection("scripts", required: false)
+    @*@RenderSection("scripts", required: false)*@
 </body>
 </html>

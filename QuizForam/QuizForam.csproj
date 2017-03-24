@@ -198,6 +198,8 @@
     <Compile Include="Areas\Admin\Controllers\MasterController.cs" />
     <Compile Include="Areas\Admin\Controllers\PlanController.cs" />
     <Compile Include="Areas\Admin\Models\Plan.cs" />
+    <Compile Include="Areas\Institute\InstituteAreaRegistration.cs" />
+    <Compile Include="Areas\Staff\StaffAreaRegistration.cs" />
     <Compile Include="Areas\Student\StudentAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,7 +238,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Plan\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Plan\CreatePlan.cshtml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Class.js" />
@@ -248,7 +250,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Areas\Admin\Views\Plan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Plan\EditPlan.cshtml" />
+    <Content Include="Areas\Staff\Views\web.config" />
+    <Content Include="Areas\Institute\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -293,6 +297,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Master\" />
+    <Folder Include="Areas\Institute\Controllers\" />
+    <Folder Include="Areas\Institute\Models\" />
+    <Folder Include="Areas\Institute\Views\Shared\" />
+    <Folder Include="Areas\Staff\Controllers\" />
+    <Folder Include="Areas\Staff\Models\" />
+    <Folder Include="Areas\Staff\Views\Shared\" />
     <Folder Include="Areas\Student\Controllers\" />
     <Folder Include="Areas\Student\Models\" />
     <Folder Include="Areas\Student\Views\Shared\" />

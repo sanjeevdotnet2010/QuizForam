@@ -23,14 +23,9 @@ namespace QuizForam.Areas.Admin.Controllers
             return View(PlanDetails);
         }
 
-        // GET: Admin/Plan/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
         // GET: Admin/Plan/Create
-        public PartialViewResult Create()
+        public PartialViewResult CreatePlan()
         {
             return PartialView();
         }
@@ -52,10 +47,11 @@ namespace QuizForam.Areas.Admin.Controllers
         }
 
         // GET: Admin/Plan/Edit/5
-        public PartialViewResult Edit(int id)
+        public PartialViewResult EditPlan(int id)
         {
-            PlanDetails 
-            return PartialView();
+            Plan pl = new Plan();
+            pl.PlanId = id;            
+            return PartialView(GetPlanById(pl));
         }
 
         // POST: Admin/Plan/Edit/5

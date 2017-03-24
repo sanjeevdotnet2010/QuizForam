@@ -1,15 +1,14 @@
 ﻿@model QuizForam.Areas.Admin.Models.Plan
 
+
 @using (Html.BeginForm())
 {
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="text-danger">Add Plan </span></h4>
+        <h4 class="modal-title" id="myModalLabel"><span class="text-danger">Edit Plan </span></h4>
     </div>
 
     <div class="modal-body custom-body">
-
-
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
@@ -53,20 +52,18 @@
                     @Html.EditorFor(model => model.Active, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
                 </div>
-
             </div>
-
-
         </div>
-
 
     </div>
     <div class="modal-footer" style="text-align:center !important">
 
-        <input type="submit" value="Create" class="btn btn-success" />
+        <input type="submit" value="Update" class="btn btn-success" />
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
     </div>
 }
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -10,10 +10,13 @@ namespace QuizForam.Areas.Admin.Models
     {
 
         public int PlanId { get; set; }
-        [DisplayName("Plan Name"), DataType(DataType.Password)]
+        [DisplayName("Plan Name"), DataType(DataType.Text),Required]
         public string PlanName { get; set; }
+        [Required]
         public int ActiveDay { get; set; }
+        [Required]
         public int GracePeriod { get; set; }
+        [Required]
         public decimal Price { get; set; }
         public Boolean Active { get; set; }
         public int CreatedBy { get; set; }

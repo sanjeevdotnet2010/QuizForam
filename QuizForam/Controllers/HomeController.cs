@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace QuizForam.Controllers
 {
@@ -42,7 +44,37 @@ namespace QuizForam.Controllers
                 dt1 = DAL.GetDataTable("Proc_UserLogin", pcol);
 
                 if (dt1.Rows.Count > 0)
-                { }
+                {
+                    int iUserType = Convert.ToInt32(dt1.Rows[0][0].ToString());
+                    FormsAuthentication.RedirectFromLoginPage(dt1.Rows[0]["ID"].ToString(), true);
+                    Session["iUserType"] = dt1.Rows[0]["iUserType"].ToString();
+                    Session["Name"] = dt1.Rows[0]["NAME"].ToString();
+
+                    if (iUserType == 1 || iUserType == 2)
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    }
+                    else if (iUserType == 3)
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "Institute" });
+                    }
+                    else if (iUserType == 4)
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "Staff" });
+                    }
+                    else if (iUserType == 5)
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "Student" });
+                    }
+                    else
+                    {
+                        ViewBag.danger = "Invalid Account ";
+                        return View();
+                    }
+
+
+
+                }
                 else
                 {
                     ViewBag.danger = "Wrong User Name and Password ";
