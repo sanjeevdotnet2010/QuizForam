@@ -8,7 +8,7 @@ namespace QuizForam.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Admin/Home
+        // GET: Admin/Home 
         public ActionResult Index()
         {
             return View();

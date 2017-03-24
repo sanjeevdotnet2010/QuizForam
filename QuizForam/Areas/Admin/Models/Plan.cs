@@ -11,7 +11,7 @@ namespace QuizForam.Areas.Admin.Models
 
         public int PlanId { get; set; }
         [DisplayName("Plan Name"), DataType(DataType.Text),Required]
-        public string PlanName { get; set; }
+        public string PlanName { get; set; } 
         [Required]
         public int ActiveDay { get; set; }
         [Required]
