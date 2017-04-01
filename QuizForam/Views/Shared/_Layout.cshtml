@@ -5,8 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
 
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/QuizForam")
+    <script src="~/Scripts/Default_Js/Class.js"></script>
+    <link href="~/Content/common/bootstrap-multiselect.css" rel="stylesheet" />
+    <script src="~/Scripts/Comman_Js/bootstrap.js"></script>
+  
+
+    <link href="~/Content/common/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/Comman_Js/bootstrap-multiselect.js"></script>
+    <link href="~/Content/stylesheet.css" rel="stylesheet" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/validationEngine.jquery.css" rel="stylesheet" />
+
+
+    <script src="~/Scripts/Comman_Js/dataTable/jquery.dataTables.js"></script>
+    <link href="~/Content/dataTable/jquery.dataTables.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Comman_Js/chosen.jquery.min.js"></script>
+    <link href="~/Content/common/chosen.css" rel="stylesheet" />
+    <script src="~/Scripts/Comman_Js/bootbox.min.js"></script>
+    <link href="~/Content/common/datepicker.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Comman_Js/date-time/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/Comman_Js/date-time/moment.min.js"></script>
+    <script src="~/Scripts/Comman_Js/date-time/daterangepicker.min.js"></script>
+    <script src="~/Scripts/Comman_Js/jquery.PrintArea.js"></script>
+    <script src="~/Scripts/Comman_Js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/Comman_Js/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/Content/common/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/common/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+
+    @RenderSection("PageScripts", false)
 
 </head>
 <body>

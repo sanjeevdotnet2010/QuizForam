@@ -1,5 +1,5 @@
 /*!
- * jQuery UI Dialog 1.8.24
+ * jQuery UI Dialog 1.8.20
  *
  * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
  * Licensed under the MIT license.
@@ -7,7 +7,8 @@
  *
  * http://docs.jquery.com/UI/Dialog#theming
  */
-.ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; }
+
+/*.ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; }
 .ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
 .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
@@ -19,3 +20,4 @@
 .ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
 .ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
 .ui-draggable .ui-dialog-titlebar { cursor: move; }
+	*/

@@ -13,11 +13,13 @@
 <head>
     <title>Admin Login</title>
     <!-- Bootstrap -->
-    <link href='@Url.Content("~/Content/bootstrap.css")' rel="stylesheet" media="screen" />
-    <link href='@Url.Content("~/css/animate.min.css")' rel="stylesheet" />
-    >
+    <link href='@Url.Content("~/Content/common/bootstrap.css")' rel="stylesheet" media="screen" />
+    <link href='@Url.Content("~/Content/animate.min.css")' rel="stylesheet" />
+    
     <link href='@Url.Content("~/Content/style1.css")' rel="stylesheet" media="screen" />
-    <link href='@Url.Content("~/css/font-awesome.css")' rel="stylesheet" />
+    <link href='@Url.Content("~/Content/font-awesome.css")' rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/modernizr")
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -53,15 +55,14 @@
                 <fieldset>
                     <div class="form-group">
                         <span class="input-icon">
-                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "Username" } })
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "Username", @required= "required" } })
                             <i class="fa fa-user"></i>
                         </span>
                         @Html.ValidationMessageFor(model => model.UserName)
                     </div>
                     <div class="form-group form-actions">
                         <span class="input-icon">
-                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
-                            @*<input class="form-control password" name="password" required  type="password" />*@
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password", @required= "required" } })
                             <i class="fa fa-lock"></i>
                         </span>
                         @Html.ValidationMessageFor(model => model.Password, "", new { htmlAttributes = new { @class = "text-danger" } })
@@ -94,11 +95,11 @@
             <script type="text/javascript" src="assets/plugins/jQuery/jquery-1.11.1.min.js"></script>
             <![endif]-->
     <!--[if gte IE 9]><!-->
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <!--<![endif]-->
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <!-- end: MAIN JAVASCRIPTS -->
-    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+
 
     <script src="~/Scripts/login.js"></script>
     <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->

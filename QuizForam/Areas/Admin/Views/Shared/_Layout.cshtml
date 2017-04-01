@@ -3,12 +3,13 @@
 
 <head>
     <title> @ViewBag.Title </title>
-    <!-- Bootstrap -->
-    <link href='@Url.Content("~/Content/bootstrap.css")' rel="stylesheet" media="screen" />
-    <link href='@Url.Content("~/Content/style.css")' rel="stylesheet" media="screen" />
-    <link href='@Url.Content("~/Content/screen.css")' rel="stylesheet" media="screen" />
-    <link href='@Url.Content("~/css/font-awesome.css")' rel="stylesheet" />
-    <link href='@Url.Content("~/Content/jquery.dataTables.min.css")' rel="stylesheet" />
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/QuizForam")
+    <script src="~/Scripts/Default_Js/Class.js"></script>
 
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,18 +17,46 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src='@Url.Content("~/scripts/jquery-1.10.2.js")'></script>
 
-    <link href='@Url.Content("~/Content/sweetalert/sweet-alert.css")' rel="stylesheet" />
-    <script src='@Url.Content("~/Scripts/sweet-alert.js")'></script>
-    <script src='@Url.Content("~/scripts/bootstrap.min.js")'></script>
-    <script src='@Url.Content("~/Scripts/jquery.dataTables.min.js")'></script>
-    <script src='@Url.Content("~/Scripts/Class.js")'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <script src="~/Scripts/Default_js/sweet-alert.js"></script>
+    <script src="~/scripts/comman_js/bootstrap.min.js"></script>
 
-   
-    <script src='@Url.Content("~/Scripts/jquery.validate.min.js")'></script>
-    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+
+    <link href="~/Content/common/bootstrap-multiselect.css" rel="stylesheet" />
+    <script src="~/Scripts/Comman_Js/bootstrap.js"></script>
+
+
+    <link href="~/Content/common/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/screen.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/Comman_Js/bootstrap-multiselect.js"></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/validationEngine.jquery.css" rel="stylesheet" />
+
+
+    <script src="~/Scripts/Comman_Js/dataTable/jquery.dataTables.js"></script>
+    <link href="~/Content/dataTable/jquery.dataTables.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Comman_Js/chosen.jquery.min.js"></script>
+    <link href="~/Content/common/chosen.css" rel="stylesheet" />
+    <script src="~/Scripts/Comman_Js/bootbox.min.js"></script>
+    <link href="~/Content/common/datepicker.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Comman_Js/date-time/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/Comman_Js/date-time/moment.min.js"></script>
+    <script src="~/Scripts/Comman_Js/date-time/daterangepicker.min.js"></script>
+    <script src="~/Scripts/Comman_Js/jquery.PrintArea.js"></script>
+    <script src="~/Scripts/Comman_Js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/Comman_Js/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/Content/common/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/common/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+
+    @RenderSection("PageScripts", false)
+
 
 </head>
 
@@ -154,7 +183,7 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-bottom ">
         <div class="navbar-header">
-            <a class="navbar-brand " href="#"> &copy; Powered by- Sanjeev & Pratush </a>
+            <a class="navbar-brand " href="#"> &copy; Powered by- QuizForam </a>
         </div>
     </nav>
     <!--/.fluid-container-->

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using QuizForam.Areas.Admin.Models;
-using QuizForam.App_Data;
+using QuizForam.App_Code;
+using QuizForam.Filter;
 
 namespace QuizForam.Areas.Admin.Controllers
 {
+    [LoginFilter]
     public class PlanController : MasterController
     {
         // GET: Admin/Plan
@@ -32,17 +34,36 @@ namespace QuizForam.Areas.Admin.Controllers
 
         // POST: Admin/Plan/Create
         [HttpPost]
-        public ActionResult Create(Plan collection)
+        public ActionResult Create(Plan model)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    string Result = "";
+                    Result = SavePlan(model);
 
-                return RedirectToAction("Index");
+                    if (Result.Trim() == "NotDone")
+                    {
+                        TempData["danger"] = "Plan  Name  Allready Exists";
+                    }
+                    else
+                    {
+                        TempData["success"] = "Plan Saved Successfully";
+                    }
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["danger"] = "Invalid Request";
+                    return RedirectToAction("Index");
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                TempData["danger"] = ex.Message;
+                return RedirectToAction("Index");
             }
         }
 
@@ -50,23 +71,43 @@ namespace QuizForam.Areas.Admin.Controllers
         public PartialViewResult EditPlan(int id)
         {
             Plan pl = new Plan();
-            pl.PlanId = id;            
+            pl.PlanId = id;
             return PartialView(GetPlanById(pl));
         }
 
         // POST: Admin/Plan/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Plan model)
         {
+
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    string Result = "";
+                    Result = UpdatePlan(model);
 
-                return RedirectToAction("Index");
+                    if (Result.Trim() == "NotDone")
+                    {
+                        TempData["danger"] = "Plan  Name  Allready Exists";
+                    }
+                    else
+                    {
+                        TempData["success"] = "Plan Updated Successfully";
+                    }
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["danger"] = "Invalid Request";
+                    return RedirectToAction("Index");
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                TempData["danger"] = ex.Message;
+                return RedirectToAction("Index");
             }
         }
 
