@@ -211,7 +211,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\ErrorLog\ProgramLog-20170204.txt" />
     <Content Include="Content\common\bootstrap-datetimepicker.css" />
     <Content Include="Content\common\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\common\bootstrap-multiselect.css" />
@@ -435,6 +434,7 @@
     <Content Include="Content\sweetalert\sweet-alert-animations.less" />
     <Content Include="Content\sweetalert\sweet-alert-combine.less" />
     <Content Include="Content\sweetalert\sweet-alert.less" />
+    <None Include="Properties\PublishProfiles\QuizForam.pubxml" />
     <None Include="Scripts\Default_Js\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\Default_Js\jquery-2.1.1.js" />
     <Content Include="Scripts\Default_Js\jquery-2.1.1.min.js" />
