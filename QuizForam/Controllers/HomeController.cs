@@ -35,13 +35,13 @@ namespace QuizForam.Controllers
 
             if (ModelState.IsValid) // this is check validity
             {
-                // Proc_UserLogin
+                // ProcUserLogin
 
 
                 pcol = new DbSqlParameterCollection();
                 DbSqlParameter p1 = new DbSqlParameter("@LoginName", model.UserName); pcol.Add(p1);
                 DbSqlParameter p2 = new DbSqlParameter("@Password", model.Password); pcol.Add(p2);
-                dt1 = DAL.GetDataTable("Proc_UserLogin", pcol);
+                dt1 = DAL.GetDataTable("ProcUserLogin", pcol);
 
                 if (dt1.Rows.Count > 0)
                 {

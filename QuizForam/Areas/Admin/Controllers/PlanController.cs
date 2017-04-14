@@ -9,9 +9,10 @@ using QuizForam.Filter;
 
 namespace QuizForam.Areas.Admin.Controllers
 {
-    [LoginFilter]
+
     public class PlanController : MasterController
     {
+        [LoginFilter]
         // GET: Admin/Plan
         public ActionResult Index()
         {
@@ -32,6 +33,7 @@ namespace QuizForam.Areas.Admin.Controllers
             return PartialView();
         }
 
+        [LoginFilter]
         // POST: Admin/Plan/Create
         [HttpPost]
         public ActionResult Create(Plan model)
@@ -75,6 +77,7 @@ namespace QuizForam.Areas.Admin.Controllers
             return PartialView(GetPlanById(pl));
         }
 
+        [LoginFilter]
         // POST: Admin/Plan/Edit/5
         [HttpPost]
         public ActionResult Edit(Plan model)
@@ -111,25 +114,40 @@ namespace QuizForam.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/Plan/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
+        [LoginFilter]
         // POST: Admin/Plan/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id)
         {
             try
             {
-                // TODO: Add delete logic here
 
+                if (id > 0)
+                {
+                    Plan model = new Plan();
+                    model.PlanId = id;
+                    string Result = "";
+                    Result = DeletePlan(model);
+
+                    if (Result.Trim() == "NotDone")
+                    {
+                        TempData["danger"] = "plan Does Not Exiest";
+                    }
+                    else
+                    {
+                        TempData["success"] = "plan Inactive Successfully";
+                    }
+                }
+                else
+                {
+                    TempData["danger"] = " Some of the required Fields are Empty.Therefore Nothing is Deleted ";
+                }
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                TempData["danger"] = ex.Message;
+                return RedirectToAction("Index");
             }
         }
     }

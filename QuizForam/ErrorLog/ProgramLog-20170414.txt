@@ -1,0 +1,6 @@
+Datetime of Error : 4/14/2017 5:30:27 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Could not find stored procedure 'ProcOrganizationMater'.
+
+

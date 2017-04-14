@@ -11,60 +11,61 @@
 
 @{
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-primary  panel-hovered panel-stacked mb30 table-responsive basic-table">
-                <div class="panel-heading">
-                    List Of Plan
+        <div class="col-xs-12">
+            <h3 class="header smaller lighter blue">Plans list</h3>
 
-                    <a class="btn  btn-success btn-xs  pull-right" id="BtnAddPlan"> <span class="fa fa-plus fa"></span> Add New Plan</a>
-
-
-                </div>
-                <div class="panel-body bg-gray">
-                    <table id="DataTable" class="table table-striped table-bordered ">
-                        <thead>
-                            <tr class="bg-danger ">
-                                <th>#</th>
-                                <th>@Html.DisplayNameFor(model => model.PlanName)</th>
-                                <th>@Html.DisplayNameFor(model => model.ActiveDay)</th>
-                                <th>@Html.DisplayNameFor(model => model.GracePeriod)</th>
-                                <th>@Html.DisplayNameFor(model => model.Price)</th>
-                                <th>@Html.DisplayNameFor(model => model.Active)</th>
-                                <th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
-                                <th width="20px">Edit</th>
-                                <th width="20px">Deactve</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                rdioid = rdioid + 1;
-                                <tr>
-                                    <td>@rdioid</td>
-                                    <td>@Html.DisplayFor(modelItem => item.PlanName)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.ActiveDay)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.GracePeriod)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Active)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.CreatedOn)</td>
-                                    <td>
-                                        <button class="btn btn-info btn-xs" onclick="EditPlanForm('@item.PlanId')"><span class="fa fa-edit fa"></span> Edit </button>
-                                    </td>
-                                    <td>
-                                        @using (Html.BeginForm("Delete", "Stream", FormMethod.Post, new { id = "form" + item.PlanId, name = "form" + item.PlanId }))
-                                        {
-                                            <input type="hidden" name="ID" value="@item.PlanId" />
-                                            <button type="button" class="btn btn-danger btn-xs" onclick="javascript: return DeletePlan('@item.PlanId','@item.PlanName'); "><span class="fa fa-close fa"></span> Delete</button>
-                                        }
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-
-                </div>
+            <div class="clearfix">
+                <a class="btn btn-white btn-primary btn-bold pull-right " id="BtnAddPlan"> <span class="fa fa-plus fa"></span> Add New Plan</a>
+                <br /> &nbsp; &nbsp;
+                <br /> &nbsp; &nbsp;
             </div>
 
+
+            <!-- div.table-responsive -->
+            <!-- div.dataTables_borderWrap -->
+            <div>
+                <table id="DataTable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr class="bg-danger ">
+                            <th>#</th>
+                            <th>@Html.DisplayNameFor(model => model.PlanName)</th>
+                            <th>@Html.DisplayNameFor(model => model.ActiveDay)</th>
+                            <th>@Html.DisplayNameFor(model => model.GracePeriod)</th>
+                            <th>@Html.DisplayNameFor(model => model.Price)</th>
+                            <th>@Html.DisplayNameFor(model => model.Active)</th>
+                            <th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
+                            <th>Edit</th>
+                            <th>Deactve</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            rdioid = rdioid + 1;
+                            <tr>
+                                <td>@rdioid</td>
+                                <td>@Html.DisplayFor(modelItem => item.PlanName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ActiveDay)</td>
+                                <td>@Html.DisplayFor(modelItem => item.GracePeriod)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Active)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CreatedOn)</td>
+                                <td>
+                                    <button class="btn btn-info btn-xs" onclick="EditPlanForm('@item.PlanId')"><span class="fa fa-edit fa"></span> Edit </button>
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("Delete","plan", FormMethod.Post, new { id = "form" + item.PlanId, name = "form" + item.PlanId }))
+                                    {
+                                        <input type="hidden" name="ID" value="@item.PlanId" />
+                                        <button type="button" class="btn btn-danger btn-xs" onclick="javascript: return DeletePlan('@item.PlanId','@item.PlanName'); "><span class="fa fa-close fa"></span> Delete</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
         </div>
     </div>
 }

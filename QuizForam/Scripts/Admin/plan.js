@@ -1,12 +1,22 @@
 ﻿
 $(document).ready(function () {
 
-    var tablehight = ($(window).height() - 320);
-    //swal(tablehight+"Px");
-    $('#DataTable').dataTable({
+    var myTable = $('#DataTable').dataTable({
         "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-        "sScrollY": tablehight + "Px"
+        bAutoWidth: false,
+        "aoColumns": [
+          { "bSortable": false },
+         null, null, null, null, null, null,
+          { "bSortable": false },
+          { "bSortable": false }
+        ],
+        "aaSorting": [],
+        select: {
+            style: 'multi'
+        }
     });
+
+
 
     $("#BtnAddPlan").click(function () {
         $("#loderimg").show();
@@ -17,7 +27,7 @@ $(document).ready(function () {
         });
     });
 
-   
+
 
 });
 
@@ -28,4 +38,22 @@ function EditPlanForm(rfn) {
         $("#FormModal").modal('show');
         $("#DivForm").html(data);
     });
+}
+
+function DeletePlan(rfn, name) {
+    swal({
+        title: "Are you sure to Inactive",
+        text:"plan : "+ name,
+        type: "warning",
+        showCancelButton: true, confirmButtonColor: "#DD6B55", confirmButtonText: "Yes, Delete it!", cancelButtonText: "No, cancel plx!",
+        closeOnConfirm: true,
+        closeOnCancel: true
+    },
+     function (isConfirm) {
+         if (isConfirm) {
+             $("#form" + rfn).submit();
+         } else {
+             return false;
+         }
+     });
 }

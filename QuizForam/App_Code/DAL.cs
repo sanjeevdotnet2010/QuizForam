@@ -734,7 +734,7 @@ namespace QuizForam.App_Code
             mail.To = strTo;
             mail.From = strFrom;
             mail.Subject = strSubject;
-            mail.Bcc = "kapil@akcds.amity.edu";
+            //mail.Bcc = "kapil@akcds.amity.edu";
 
             mail.Body = strmsgBody;
             mail.BodyFormat = MailFormat.Html;
