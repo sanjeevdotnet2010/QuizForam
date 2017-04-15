@@ -367,7 +367,7 @@ namespace QuizForam.App_Code
                 }
             }
         }
-        
+
         public static DataTable GetDataTable(string Text)
         {
             bool isTransaction = IsTransaction;
@@ -608,7 +608,7 @@ namespace QuizForam.App_Code
                     }
                     catch (Exception ex)
                     {
-                        // LogFileWrite("Page Url:   " + HttpContext.Current.Request.Url + Environment.NewLine + "Error  : " + ex.Message);
+                        LogFileWrite("Page Url:   " + HttpContext.Current.Request.Url + Environment.NewLine + "Error  : " + ex.Message);
                         return null;
                     }
                     finally
@@ -753,11 +753,21 @@ namespace QuizForam.App_Code
 
         public static List<T> ConvertDtToList<T>(DataTable dt)
         {
+
             List<T> data = new List<T>();
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                T item = GetItem<T>(row);
-                data.Add(item);
+                foreach (DataRow row in dt.Rows)
+                {
+                    T item = GetItem<T>(row);
+                    data.Add(item);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                LogFileWrite("Page Url:   " + HttpContext.Current.Request.Url + Environment.NewLine + "In Dal layer  (ConvertDtToList) " + Environment.NewLine + "Error  : " + ex.Message);
+                throw;
             }
             return data;
         }

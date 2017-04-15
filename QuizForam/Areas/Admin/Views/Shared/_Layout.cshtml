@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>Dashboard - Ace Admin</title>
+    <title>@ViewBag.Title</title>
 
     <meta name="description" content="overview &amp; stats" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -390,7 +390,7 @@
                             <li class="divider"></li>
 
                             <li>
-                                <a href="#">
+                                <a href="home/logout">
                                     <i class="ace-icon fa fa-power-off"></i>
                                     Logout
                                 </a>
@@ -721,7 +721,7 @@
                     @if (!string.IsNullOrEmpty(ViewBag.danger))
                     {
                         <script>
-                            window.setTimeout(function () { $(".alert-danger").slideUp(500, function () { $(this).remove(); }); }, 3000);
+                           // window.setTimeout(function () { $(".alert-danger").slideUp(500, function () { $(this).remove(); }); }, 3000);
                         </script>
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -732,7 +732,7 @@
                     @if (!string.IsNullOrEmpty(ViewBag.success))
                     {
                         <script>
-                            window.setTimeout(function () { $(".alert-success").slideUp(500, function () { $(this).remove(); }); }, 3000);
+                            //window.setTimeout(function () { $(".alert-success").slideUp(500, function () { $(this).remove(); }); }, 3000);
                         </script>
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>

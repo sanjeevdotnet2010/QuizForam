@@ -6,11 +6,12 @@ using System.Web.Mvc;
 using QuizForam.Areas.Admin.Models;
 using QuizForam.App_Code;
 using QuizForam.Filter;
+using System.Collections;
 
 namespace QuizForam.Areas.Admin.Controllers
 {
 
-    public class PlanController : MasterController
+    public class PlanController : Controller
     {
         [LoginFilter]
         // GET: Admin/Plan
@@ -21,9 +22,9 @@ namespace QuizForam.Areas.Admin.Controllers
             TempData["danger"] = null;
             TempData["success"] = null;
 
-            List<Plan> PlanDetails = new List<Plan>();
-            PlanDetails = DAL.ConvertDtToList<Plan>(GetAllPlans());
-            return View(PlanDetails);
+            Plan pl = new Plan();
+            pl.PlanList = pl.GetAllPlans().OrderBy(x => x.PlanName).ToList();
+            return View(pl.PlanList);
         }
 
 
@@ -42,8 +43,9 @@ namespace QuizForam.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    model.CreatedBy = User.Identity.Name;
                     string Result = "";
-                    Result = SavePlan(model);
+                    Result = model.SavePlan(model);
 
                     if (Result.Trim() == "NotDone")
                     {
@@ -74,7 +76,7 @@ namespace QuizForam.Areas.Admin.Controllers
         {
             Plan pl = new Plan();
             pl.PlanId = id;
-            return PartialView(GetPlanById(pl));
+            return PartialView(pl.GetPlanById(pl));
         }
 
         [LoginFilter]
@@ -87,8 +89,9 @@ namespace QuizForam.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    model.CreatedBy = User.Identity.Name;
                     string Result = "";
-                    Result = UpdatePlan(model);
+                    Result = model.UpdatePlan(model);
 
                     if (Result.Trim() == "NotDone")
                     {
@@ -121,13 +124,12 @@ namespace QuizForam.Areas.Admin.Controllers
         {
             try
             {
-
                 if (id > 0)
                 {
                     Plan model = new Plan();
                     model.PlanId = id;
                     string Result = "";
-                    Result = DeletePlan(model);
+                    Result = model.DeletePlan(model);
 
                     if (Result.Trim() == "NotDone")
                     {

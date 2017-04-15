@@ -195,9 +195,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\MasterController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrganizationController.cs" />
     <Compile Include="Areas\Admin\Controllers\PlanController.cs" />
+    <Compile Include="Areas\Admin\Models\Master.cs" />
     <Compile Include="Areas\Admin\Models\Organization.cs" />
     <Compile Include="Areas\Admin\Models\Plan.cs" />
     <Compile Include="Areas\Institute\InstituteAreaRegistration.cs" />
@@ -637,7 +637,6 @@
     <Content Include="Scripts\jquery-3.0.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\Master\" />
     <Folder Include="Areas\Institute\Controllers\" />
     <Folder Include="Areas\Institute\Models\" />
     <Folder Include="Areas\Institute\Views\Shared\" />
@@ -648,6 +647,7 @@
     <Folder Include="Areas\Student\Models\" />
     <Folder Include="Areas\Student\Views\Shared\" />
     <Folder Include="Images\" />
+    <Folder Include="UploadedFolder\logo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

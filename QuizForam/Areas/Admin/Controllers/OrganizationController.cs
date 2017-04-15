@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace QuizForam.Areas.Admin.Controllers
 {
-    public class OrganizationController : MasterController
+    public class OrganizationController : Controller
     {
         [LoginFilter]
         // GET: Admin/Organization
@@ -20,9 +20,9 @@ namespace QuizForam.Areas.Admin.Controllers
             TempData["danger"] = null;
             TempData["success"] = null;
 
-            List<Organization> OrganizationDetails = new List<Organization>();
-            OrganizationDetails = DAL.ConvertDtToList<Organization>(GetAllOrganizations());
-            return View(OrganizationDetails);
+            Organization Org = new Organization();
+            Org.OrganizationList = Org.GetAllOrganizations().OrderBy(x => x.OrganizationName).ToList();
+            return View(Org.OrganizationList);
         }
 
 
@@ -41,8 +41,20 @@ namespace QuizForam.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    model.CreatedBy = User.Identity.Name;
+
+                    if (model.LogoFile != null && model.LogoFile.FileName != "")
+                    {
+                        string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
+                        string path1 = string.Format("{0}{1}", Server.MapPath("~/UploadedFolder/Logo/"), filename);
+                        if (System.IO.File.Exists(path1))
+                            System.IO.File.Delete(path1);
+                        model.LogoFile.SaveAs(path1);
+                        model.Logo = filename;
+                    }
+
                     string Result = "";
-                    Result = SaveOrganization(model);
+                    Result = model.SaveOrganization(model);
 
                     if (Result.Trim() == "NotDone")
                     {
@@ -71,9 +83,9 @@ namespace QuizForam.Areas.Admin.Controllers
         // GET: Admin/Organization/Edit/5
         public PartialViewResult EditOrganization(int id)
         {
-            Organization pl = new Organization();
-            pl.OrganizationID = id;
-            return PartialView(GetOrganizationById(pl));
+            Organization Org = new Organization();
+            Org.OrganizationID = id;
+            return PartialView(Org.GetOrganizationById(Org));
         }
 
         [LoginFilter]
@@ -86,8 +98,10 @@ namespace QuizForam.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
+                    model.CreatedBy = User.Identity.Name;
                     string Result = "";
-                    Result = UpdateOrganization(model);
+                    Result = model.UpdateOrganization(model);
 
                     if (Result.Trim() == "NotDone")
                     {
@@ -126,7 +140,7 @@ namespace QuizForam.Areas.Admin.Controllers
                     Organization model = new Organization();
                     model.OrganizationID = id;
                     string Result = "";
-                    Result = DeleteOrganization(model);
+                    Result = model.DeleteOrganization(model);
 
                     if (Result.Trim() == "NotDone")
                     {

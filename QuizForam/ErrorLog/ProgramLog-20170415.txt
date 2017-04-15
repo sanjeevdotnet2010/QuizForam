@@ -1,0 +1,60 @@
+Datetime of Error : 4/15/2017 5:58:59 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 6:02:49 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 6:04:16 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 6:09:18 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 7:00:39 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 7:00:47 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 7:01:47 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : Input string was not in a correct format.
+
+
+Datetime of Error : 4/15/2017 7:04:49 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : String was not recognized as a valid DateTime.
+
+
+Datetime of Error : 4/15/2017 7:05:21 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : String was not recognized as a valid DateTime.
+
+
+Datetime of Error : 4/15/2017 7:08:42 PM
+Page Url:   http://localhost:50883/Admin/plan
+In GetAllPlans 
+Error  : The string was not recognized as a valid DateTime. There is an unknown word starting at index 0.
+
+
