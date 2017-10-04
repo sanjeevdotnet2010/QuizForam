@@ -7,13 +7,11 @@ $(document).ready(function () {
         "aoColumns": [
           { "bSortable": false },
          null, null, null, null, null, null,
+          //{ "bSortable": false },
           { "bSortable": false },
           { "bSortable": false }
         ],
-        "aaSorting": [],
-        select: {
-            style: 'multi'
-        }
+        "aaSorting": []
     });
 
 

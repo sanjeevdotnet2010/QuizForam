@@ -15,7 +15,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>Login Page - Ace Admin</title>
+    <title>Quiz Foram Login</title>
 
     <meta name="description" content="User login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -48,7 +48,7 @@
     <script src="../assets/js/bootstrap.min.js"></script>
 </head>
 
-<body class="login-layout">
+<body class="login-layout light-login">
     <div class="main-container">
         <div class="main-content">
             <div class="row">
@@ -58,7 +58,7 @@
                             <h1>
                                 <i class="ace-icon fa fa-leaf green"></i>
                                 <span class="red">Quiz</span>
-                                <span class="white" id="id-text2">Foram</span>
+                                <span class="grey" id="id-text2">Foram</span>
                             </h1>
                             <h4 class="blue" id="id-company-text">&copy; www.Quizforam.com</h4>
                         </div>
@@ -76,7 +76,7 @@
 
                                         <div class="space-6"></div>
                                         @using (Html.BeginForm(FormMethod.Post))
-            {
+                                        {
                                             @Html.AntiForgeryToken()
                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                             //required = "required"

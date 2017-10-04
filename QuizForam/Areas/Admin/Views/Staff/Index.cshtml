@@ -1,0 +1,78 @@
+﻿@model IEnumerable<QuizForam.Areas.Admin.Models.Staff>
+
+@{
+    ViewBag.Title = "Staff Master";
+    var rdioid = 0;
+}
+
+
+<script src='@Url.Content("~/Scripts/Admin/Staff.js")'></script>
+
+
+@{
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="header smaller lighter blue">Staff list</h3>
+
+            <div class="clearfix">
+                <a class="btn btn-white btn-primary btn-bold pull-right " id="BtnAddStaff"> <span class="fa fa-plus fa"></span> Add New Staff</a>
+                <br /> &nbsp; &nbsp;
+                <br /> &nbsp; &nbsp;
+            </div>
+
+            <div class="table-responsive">
+                <table id="DataTable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr class="bg-danger ">
+                            <th>#</th>
+                            <th>@Html.DisplayNameFor(model => model.Title)</th>
+                            <th>@Html.DisplayNameFor(model => model.StaffName)</th>
+                            <th>@Html.DisplayNameFor(model => model.OrganizationName)</th>
+                            <th class="hidden-sm hidden-xs">@Html.DisplayNameFor(model => model.PhoneNo)</th>                         
+                            <th class="hidden-sm hidden-xs">@Html.DisplayNameFor(model => model.Active)</th>
+                            <th class="hidden-sm hidden-xs">@Html.DisplayNameFor(model => model.CreatedOn)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            rdioid = rdioid + 1;
+                            <tr>
+                                <td>@rdioid</td>
+                                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                                <td>@Html.DisplayFor(modelItem => item.StaffName)</td>
+                                <td class="hidden-sm hidden-xs">@Html.DisplayFor(modelItem => item.OrganizationName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.PhoneNo)</td>
+                                <td class="hidden-sm hidden-xs">@Html.DisplayFor(modelItem => item.Active)</td>
+                                <td class="hidden-sm hidden-xs">@Html.DisplayFor(modelItem => item.CreatedOn)</td>
+                                <td>
+
+                                    <a class="blue" onclick="ViewStaff('@item.StaffId')"><i class="ace-icon fa fa-search-plus bigger-130"></i> </a>
+                                    <a class="green" onclick="EditStaffForm('@item.StaffId')"><i class="ace-icon fa fa-pencil bigger-130"></i> </a>
+                                    <a href="@Url.Action("Toggle", "Staff", new { id = item.StaffId })" class="red" onclick="javascript: return ToggleStaff('@item.StaffId','@item.StaffName'); ">
+                                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div id="DivForm"></div>
+        </div>
+    </div>
+</div>
+
+
+

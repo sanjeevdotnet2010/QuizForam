@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using QuizForam.Areas.Admin.Models;
-using QuizForam.App_Code;
 using QuizForam.Filter;
-using System.Collections;
 
 namespace QuizForam.Areas.Admin.Controllers
 {
@@ -17,19 +13,13 @@ namespace QuizForam.Areas.Admin.Controllers
         // GET: Admin/Plan
         public ActionResult Index()
         {
-            ViewBag.danger = TempData["danger"];
-            ViewBag.success = TempData["success"];
-            TempData["danger"] = null;
-            TempData["success"] = null;
-
             Plan pl = new Plan();
             pl.PlanList = pl.GetAllPlans().OrderBy(x => x.PlanName).ToList();
             return View(pl.PlanList);
         }
 
-
         // GET: Admin/Plan/Create
-        public PartialViewResult CreatePlan()
+        public ActionResult CreatePlan()
         {
             return PartialView();
         }
@@ -72,7 +62,7 @@ namespace QuizForam.Areas.Admin.Controllers
         }
 
         // GET: Admin/Plan/Edit/5
-        public PartialViewResult EditPlan(int id)
+        public ActionResult EditPlan(int id)
         {
             Plan pl = new Plan();
             pl.PlanId = id;
@@ -117,10 +107,18 @@ namespace QuizForam.Areas.Admin.Controllers
             }
         }
 
+        // GET: Admin/Plan/Edit/5
+        public PartialViewResult View(int id)
+        {
+            Plan pl = new Plan();
+            pl.PlanId = id;
+            return PartialView(pl.GetPlanById(pl));
+        }
+
         [LoginFilter]
-        // POST: Admin/Plan/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id)
+        // POST: Admin/Plan/Toggle/5
+
+        public ActionResult Toggle(int id)
         {
             try
             {
@@ -129,7 +127,7 @@ namespace QuizForam.Areas.Admin.Controllers
                     Plan model = new Plan();
                     model.PlanId = id;
                     string Result = "";
-                    Result = model.DeletePlan(model);
+                    Result = model.TogglePlan(model);
 
                     if (Result.Trim() == "NotDone")
                     {
@@ -137,7 +135,7 @@ namespace QuizForam.Areas.Admin.Controllers
                     }
                     else
                     {
-                        TempData["success"] = "plan Inactive Successfully";
+                        TempData["success"] = "plan Toggled Successfully";
                     }
                 }
                 else

@@ -43,7 +43,7 @@ namespace QuizForam.Areas.Admin.Models
                         ActiveDay = Convert.ToInt32(row["ActiveDay"].ToString()),
                         Price = Convert.ToInt32(row["Price"].ToString()),
                         Active = Convert.ToBoolean(row["Active"].ToString()),
-                       // CreatedOn = Convert.ToDateTime(row["Active"].ToString())
+                        CreatedOn = Convert.ToDateTime(row["CreatedOn"].ToString())
                     };
                     planlist.Add(obj);
                 }
@@ -97,7 +97,7 @@ namespace QuizForam.Areas.Admin.Models
             str = DAL.SqlScalartoObj("ProcPlanMaster", pcol).ToString();
             return str;
         }
-        public string DeletePlan(Plan model)
+        public string TogglePlan(Plan model)
         {
             pcol = new DbSqlParameterCollection();
             DbSqlParameter p1 = new DbSqlParameter("Mode", "5"); pcol.Add(p1);

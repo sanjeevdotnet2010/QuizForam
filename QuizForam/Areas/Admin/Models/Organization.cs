@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Globalization;
 using System.Web;
 
 namespace QuizForam.Areas.Admin.Models
@@ -17,8 +18,8 @@ namespace QuizForam.Areas.Admin.Models
         public string OrganizationName { get; set; }
         [DisplayName("Sort Name"), Required]
         public string SortName { get; set; }
-        [DisplayName("Logo Image"), Required]
-        public HttpPostedFileBase LogoFile { get; set; }       
+        [DisplayName("Logo Image")]
+        public HttpPostedFileBase LogoFile { get; set; }
         public string Logo { get; set; }
         [DisplayName("PhoneNo 1"), DataType(DataType.PhoneNumber), Required]
         public Int64? PhoneNo1 { get; set; }
@@ -34,13 +35,14 @@ namespace QuizForam.Areas.Admin.Models
         public Int32 Category { get; set; }
         [DisplayName("Login Name"), Required]
         public string LoginName { get; set; }
-        [DisplayName("Login Password"),DataType(DataType.Password), Required]
+        //[DisplayName("Login Password"), Required]
+        [DisplayName("Login Password"), DataType(DataType.Password), Required]
         public string NewPssword { get; set; }
 
         public List<Organization> OrganizationList { get; set; }
 
         #region Organization section
-        
+
         public List<Organization> GetAllOrganizations()
         {
             var Organizationlist = new List<Organization>();
@@ -49,7 +51,7 @@ namespace QuizForam.Areas.Admin.Models
                 pcol = new DbSqlParameterCollection();
                 DbSqlParameter p1 = new DbSqlParameter("Mode", "1"); pcol.Add(p1);
                 dtloc = DAL.GetDataTable("procOrganizationMaster", pcol);
-
+                CultureInfo provider = CultureInfo.InvariantCulture;
                 foreach (DataRow row in dtloc.Rows)
                 {
                     var obj = new Organization()
@@ -64,8 +66,7 @@ namespace QuizForam.Areas.Admin.Models
                         SenderEmailId = row["sSenderEmailId"].ToString(),
                         Address = row["sAddress"].ToString(),
                         Active = Convert.ToBoolean(row["bActive"].ToString()),
-                        // DateTime oDate = DateTime.ParseExact(iString, "yyyy-MM-dd HH:mm tt", null);
-                        //CreatedOn = DateTime.ParseExact(row["dCreatedOn"].ToString(), "yyyy-MM-dd HH:mm tt", null)
+                        CreatedOn = Convert.ToDateTime(row["dCreatedOn"])
                     };
                     Organizationlist.Add(obj);
                 }
@@ -86,16 +87,19 @@ namespace QuizForam.Areas.Admin.Models
             dtloc = DAL.GetDataTable("procOrganizationMaster", pcol);
             if (dtloc.Rows.Count > 0)
             {
-                model.OrganizationName = dtloc.Rows[0]["OrganizationName"].ToString();
-                model.SortName = dtloc.Rows[0]["SortName"].ToString();
-                model.Logo = dtloc.Rows[0]["Logo"].ToString();
-                model.PhoneNo1 = Convert.ToInt64(dtloc.Rows[0]["PhoneNo1"].ToString());
-                model.PhoneNo2 = Convert.ToInt64(dtloc.Rows[0]["PhoneNo2"].ToString());
-                model.EmailId = dtloc.Rows[0]["EmailId"].ToString();
-                model.SenderEmailId = dtloc.Rows[0]["SenderEmailId"].ToString();
-                model.Address = dtloc.Rows[0]["Address"].ToString();
-                model.Category = Convert.ToInt32(dtloc.Rows[0]["Category"].ToString());
-                model.Active = Convert.ToBoolean(dtloc.Rows[0]["Active"].ToString());
+                model.OrganizationName = dtloc.Rows[0]["sOrganizationName"].ToString();
+                model.SortName = dtloc.Rows[0]["sSortName"].ToString();
+                model.Logo = dtloc.Rows[0]["sLogo"].ToString();
+                model.PhoneNo1 = Convert.ToInt64(dtloc.Rows[0]["iPhoneNo1"].ToString());
+                model.PhoneNo2 = Convert.ToInt64(dtloc.Rows[0]["iPhoneNo2"].ToString());
+                model.EmailId = dtloc.Rows[0]["sEmailId"].ToString();
+                model.SenderEmailId = dtloc.Rows[0]["sSenderEmailId"].ToString();
+                model.Address = dtloc.Rows[0]["sAddress"].ToString();
+                model.Category = Convert.ToInt32(dtloc.Rows[0]["iCategory"].ToString());
+                model.Active = Convert.ToBoolean(dtloc.Rows[0]["bActive"].ToString());
+                model.LoginName = dtloc.Rows[0]["sLoginName"].ToString();
+                model.NewPssword = dtloc.Rows[0]["sNewPssword"].ToString();
+
             }
 
             return model;

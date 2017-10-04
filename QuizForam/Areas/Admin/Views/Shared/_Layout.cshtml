@@ -30,7 +30,7 @@
     <![endif]-->
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
-    <script src="../assets/js/ace-extra.min.js"></script>
+    <script src="~/assets/js/ace-extra.min.js"></script>
 
     <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
     <!--[if lte IE 8]>
@@ -39,47 +39,50 @@
     <![endif]-->
     <!-- basic scripts -->
     <!--[if !IE]> -->
-    <script src="../assets/js/jquery-2.1.4.min.js"></script>
+    <script src="~/assets/js/jquery-2.1.4.min.js"></script>
 
     <!-- <![endif]-->
     <!--[if IE]>
     <script src ="../assets/js/jquery-1.11.3.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-        if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
-    </script>
-    <script src="../Scripts/Default_Js/jquery.unobtrusive-ajax.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript">
+            if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+        </script>*@
+    <script src="~/Scripts/Default_Js/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
 
 
     <link href="../Content/sweetalert/sweet-alert.css" rel="stylesheet" />
-    <script src="../Scripts/Default_js/sweet-alert.js"></script>
+    <script src="~/Scripts/Default_js/sweet-alert.js"></script>
     <!-- page specific plugin scripts -->
     <!--[if lte IE 8]>
       <script src ="../assets/js/excanvas.min.js"></script>
     <![endif]-->
-    <script src="../assets/js/jquery-ui.custom.min.js"></script>
-    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="../assets/js/jquery.easypiechart.min.js"></script>
-    <script src="../assets/js/jquery.sparkline.index.min.js"></script>
-    <script src="../assets/js/jquery.flot.min.js"></script>
-    <script src="../assets/js/jquery.flot.pie.min.js"></script>
-    <script src="../assets/js/jquery.flot.resize.min.js"></script>
+    <script src="~/assets/js/jquery-ui.custom.min.js"></script>
+    <script src="~/assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/assets/js/jquery.easypiechart.min.js"></script>
+    <script src="~/assets/js/jquery.sparkline.index.min.js"></script>
+    <script src="~/assets/js/jquery.flot.min.js"></script>
+    <script src="~/assets/js/jquery.flot.pie.min.js"></script>
+    <script src="~/assets/js/jquery.flot.resize.min.js"></script>
 
 
     <!-- page specific plugin scripts -->
-    <script src="../assets/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/js/jquery.dataTables.bootstrap.min.js"></script>
-    <script src="../assets/js/dataTables.buttons.min.js"></script>
-    <script src="../assets/js/buttons.flash.min.js"></script>
-    <script src="../assets/js/buttons.html5.min.js"></script>
-    <script src="../assets/js/buttons.print.min.js"></script>
-    <script src="../assets/js/buttons.colVis.min.js"></script>
-    <script src="../assets/js/dataTables.select.min.js"></script>
+    <script src="~/assets/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/js/jquery.dataTables.bootstrap.min.js"></script>
+    <script src="~/assets/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets/js/buttons.flash.min.js"></script>
+    <script src="~/assets/js/buttons.html5.min.js"></script>
+    <script src="~/assets/js/buttons.print.min.js"></script>
+    <script src="~/assets/js/buttons.colVis.min.js"></script>
+    <script src="~/assets/js/dataTables.select.min.js"></script>
 
     <!-- ace scripts -->
-    <script src="../assets/js/ace-elements.min.js"></script>
-    <script src="../assets/js/ace.min.js"></script>
+    <script src="~/assets/js/ace-elements.min.js"></script>
+    <script src="~/assets/js/ace.min.js"></script>
+
+    <link href="~/assets/css/Custom.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jqueryval")
 
 </head>
 
@@ -268,7 +271,7 @@
                                 <ul class="dropdown-menu dropdown-navbar">
                                     <li>
                                         <a href="#" class="clearfix">
-                                            <img src="../assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                            <img src="~/assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
                                             <span class="msg-body">
                                                 <span class="msg-title">
                                                     <span class="blue">Alex:</span>
@@ -285,7 +288,7 @@
 
                                     <li>
                                         <a href="#" class="clearfix">
-                                            <img src="../assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                            <img src="~/assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
                                             <span class="msg-body">
                                                 <span class="msg-title">
                                                     <span class="blue">Susan:</span>
@@ -302,7 +305,7 @@
 
                                     <li>
                                         <a href="#" class="clearfix">
-                                            <img src="../assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                            <img src="~/assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
                                             <span class="msg-body">
                                                 <span class="msg-title">
                                                     <span class="blue">Bob:</span>
@@ -319,7 +322,7 @@
 
                                     <li>
                                         <a href="#" class="clearfix">
-                                            <img src="../assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                            <img src="~/assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
                                             <span class="msg-body">
                                                 <span class="msg-title">
                                                     <span class="blue">Kate:</span>
@@ -336,7 +339,7 @@
 
                                     <li>
                                         <a href="#" class="clearfix">
-                                            <img src="../assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                            <img src="~/assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
                                             <span class="msg-body">
                                                 <span class="msg-title">
                                                     <span class="blue">Fred:</span>
@@ -364,7 +367,7 @@
 
                     <li class="light-blue dropdown-modal">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <img class="nav-user-photo" src="../assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                            <img class="nav-user-photo" src="~/assets/images/avatars/user.jpg" alt="Jason's Photo" />
                             <span class="user-info">
                                 <small>Welcome,</small>   @Session["Name"]
                             </span>
@@ -424,16 +427,31 @@
                     <b class="arrow"></b>
                 </li>
                 <li class="">
-                    <a href="plan">
+
+                    <a href="Plan">
                         <i class="menu-icon fa fa-tachometer"></i>
-                        <span class="menu-text"> Plan master </span>
+                        <span class="menu-text"> plan master </span>
                     </a>
+
+
+
+
+
                     <b class="arrow"></b>
                 </li>
                 <li class="">
                     <a href="Organization">
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text"> Organization master </span>
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="Staff">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text"> Staff master </span>
                     </a>
 
 
@@ -717,27 +735,31 @@
                             </div><!-- /.pull-left -->
                         </div><!-- /.ace-settings-box -->
                     </div><!-- /.ace-settings-container -->
-
-                    @if (!string.IsNullOrEmpty(ViewBag.danger))
+                    @if (TempData["danger"] != null)
                     {
-                        <script>
-                           // window.setTimeout(function () { $(".alert-danger").slideUp(500, function () { $(this).remove(); }); }, 3000);
-                        </script>
-                        <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            @ViewBag.danger
-                        </div>
+                        if (!string.IsNullOrEmpty(TempData["danger"].ToString()))
+                        {
+                            <script>
+                                window.setTimeout(function () { $(".alert-danger").slideUp(500, function () { $(this).remove(); }); }, 3000);
+                            </script>
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                @TempData["danger"]
+                            </div>
+                        }
                     }
-
-                    @if (!string.IsNullOrEmpty(ViewBag.success))
+                    @if (TempData["success"] != null)
                     {
-                        <script>
-                            //window.setTimeout(function () { $(".alert-success").slideUp(500, function () { $(this).remove(); }); }, 3000);
-                        </script>
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            @ViewBag.success
-                        </div>
+                        if (!string.IsNullOrEmpty(TempData["success"].ToString()))
+                        {
+                            <script>
+                                window.setTimeout(function () { $(".alert-success").slideUp(500, function () { $(this).remove(); }); }, 3000);
+                            </script>
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                @TempData["success"]
+                            </div>
+                        }
                     }
 
                     @RenderBody()
@@ -792,7 +814,6 @@
 
         })
     </script>
+
 </body>
 </html>
-
-

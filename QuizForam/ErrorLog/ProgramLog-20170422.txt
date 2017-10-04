@@ -1,0 +1,12 @@
+Datetime of Error : 4/22/2017 7:15:55 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : String was not recognized as a valid DateTime.
+
+
+Datetime of Error : 4/22/2017 7:16:40 PM
+Page Url:   http://localhost:50883/Admin/Organization
+In GetAllOrganizations 
+Error  : String was not recognized as a valid DateTime.
+
+

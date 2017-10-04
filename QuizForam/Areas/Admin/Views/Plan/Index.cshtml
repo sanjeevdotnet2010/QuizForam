@@ -23,8 +23,8 @@
 
             <!-- div.table-responsive -->
             <!-- div.dataTables_borderWrap -->
-            <div>
-                <table id="DataTable" class="table table-striped table-bordered table-hover">
+            <div  class="table-responsive">
+                <table id="PlanTable" class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr class="bg-danger ">
                             <th>#</th>
@@ -54,7 +54,7 @@
                                     <button class="btn btn-info btn-xs" onclick="EditPlanForm('@item.PlanId')"><span class="fa fa-edit fa"></span> Edit </button>
                                 </td>
                                 <td>
-                                    @using (Html.BeginForm("Delete","plan", FormMethod.Post, new { id = "form" + item.PlanId, name = "form" + item.PlanId }))
+                                    @using (Html.BeginForm("Delete", "plan", FormMethod.Post, new { id = "form" + item.PlanId, name = "form" + item.PlanId }))
                                     {
                                         <input type="hidden" name="ID" value="@item.PlanId" />
                                         <button type="button" class="btn btn-danger btn-xs" onclick="javascript: return DeletePlan('@item.PlanId','@item.PlanName'); "><span class="fa fa-close fa"></span> Delete</button>

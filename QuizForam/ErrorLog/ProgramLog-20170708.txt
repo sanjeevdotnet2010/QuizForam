@@ -1,0 +1,18 @@
+Datetime of Error : 08/07/2017 11:27:33 PM
+Page Url:   http://localhost:50883/Home/Login
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Invalid column name 'sStaffNase'.
+
+
+Datetime of Error : 08/07/2017 11:28:51 PM
+Page Url:   http://localhost:50883/Admin/Staff
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : Could not find stored procedure 'procStaffMaster'.
+
+
+Datetime of Error : 08/07/2017 11:28:51 PM
+Page Url:   http://localhost:50883/Admin/Staff
+In GetAllOrganizations 
+Error  : Could not find stored procedure 'procStaffMaster'.
+
+

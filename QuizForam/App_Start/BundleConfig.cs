@@ -31,12 +31,22 @@ namespace QuizForam
                 "~/Scripts/Comman_Js/shortcutKeys.js",
                 "~/Scripts/Comman_Js/CommanJs.js"
                 ));
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                "~/Scripts/modernizr-*"
-                ));
-            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                "~/scripts/autocompletescript.js"
-                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/assets").Include(
+                "~/assets/js/jquery.dataTables.min.js",
+                "~/assets/js/jquery.dataTables.bootstrap.min.js",
+                "~/assets/js/dataTables.buttons.min.js",
+                "~/assets/js/buttons.flash.min.js",
+                "~/assets/js/buttons.html5.min.js",
+                "~/assets/js/buttons.print.min.js",
+                "~/assets/js/buttons.colVis.min.js",
+                "~/assets/js/dataTables.select.min.js"
+               ));
+
+
+
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include("~/scripts/autocompletescript.js"));
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                 "~/Content/themes/base/jquery.ui.core.css",
                 "~/Content/themes/base/jquery.ui.resizable.css",

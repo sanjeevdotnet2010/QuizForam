@@ -1,19 +1,12 @@
 ﻿
 $(document).ready(function () {
 
-    var myTable = $('#DataTable').dataTable({
+    var myTable = $('#PlanTable').dataTable({
         "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-        bAutoWidth: false,
-        "aoColumns": [
-          { "bSortable": false },
-         null, null, null, null, null, null,
-          { "bSortable": false },
-          { "bSortable": false }
-        ],
-        "aaSorting": [],
-        select: {
-            style: 'multi'
-        }
+        bAutoWidth: false//,
+      //  "aoColumns": [{ "bSortable": false }, null, null, null, null, null, null, { "bSortable": false }]
+
+
     });
 
 
@@ -40,10 +33,20 @@ function EditPlanForm(rfn) {
     });
 }
 
-function DeletePlan(rfn, name) {
+
+function ViewPlan(rfn) {
+    $("#loderimg").show();
+    $.post("/Admin/Plan/View", { "id": rfn }).done(function (data) {
+        $("#loderimg").hide();
+        $("#FormModal").modal('show');
+        $("#DivForm").html(data);
+    });
+}
+
+function TogglePlan(rfn, name) {
     swal({
-        title: "Are you sure to Inactive",
-        text:"plan : "+ name,
+        title: "Are you sure to Change Status ",
+        text: "plan : " + name,
         type: "warning",
         showCancelButton: true, confirmButtonColor: "#DD6B55", confirmButtonText: "Yes, Delete it!", cancelButtonText: "No, cancel plx!",
         closeOnConfirm: true,
@@ -51,7 +54,7 @@ function DeletePlan(rfn, name) {
     },
      function (isConfirm) {
          if (isConfirm) {
-             $("#form" + rfn).submit();
+             return false;
          } else {
              return false;
          }

@@ -1,0 +1,54 @@
+Datetime of Error : 26/07/2017 9:44:48 PM
+Page Url:   http://localhost:50883/Admin/Staff/View
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:44:49 PM
+Page Url:   http://localhost:50883/Admin/Staff/View
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:44:50 PM
+Page Url:   http://localhost:50883/Admin/Staff/View
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:45:02 PM
+Page Url:   http://localhost:50883/Admin/Staff/View
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:45:13 PM
+Page Url:   http://localhost:50883/Admin/Staff/View
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:46:22 PM
+Page Url:   http://localhost:50883/Admin/Staff/view/1
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:48:06 PM
+Page Url:   http://localhost:50883/Admin/Staff/view/1
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:48:16 PM
+Page Url:   http://localhost:50883/Admin/Staff/view/1
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+
+Datetime of Error : 26/07/2017 9:49:36 PM
+Page Url:   http://localhost:50883/Admin/Staff/view/1
+In Dal layer  (GetDataTable Two Para Proc) 
+Error  : @StaffId is not a parameter for procedure procStaffMaster.
+
+

@@ -15,11 +15,6 @@ namespace QuizForam.Areas.Admin.Controllers
         // GET: Admin/Organization
         public ActionResult Index()
         {
-            ViewBag.danger = TempData["danger"];
-            ViewBag.success = TempData["success"];
-            TempData["danger"] = null;
-            TempData["success"] = null;
-
             Organization Org = new Organization();
             Org.OrganizationList = Org.GetAllOrganizations().OrderBy(x => x.OrganizationName).ToList();
             return View(Org.OrganizationList);
@@ -100,6 +95,16 @@ namespace QuizForam.Areas.Admin.Controllers
                 {
 
                     model.CreatedBy = User.Identity.Name;
+                    if (model.LogoFile != null && model.LogoFile.FileName != "")
+                    {
+                        string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
+                        string path1 = string.Format("{0}{1}", Server.MapPath("~/UploadedFolder/Logo/"), filename);
+                        if (System.IO.File.Exists(path1))
+                            System.IO.File.Delete(path1);
+                        model.LogoFile.SaveAs(path1);
+                        model.Logo = filename;
+                    }
+
                     string Result = "";
                     Result = model.UpdateOrganization(model);
 

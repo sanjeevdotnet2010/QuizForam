@@ -1,6 +1,7 @@
 ﻿using QuizForam.App_Code;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -21,6 +22,7 @@ namespace QuizForam.Areas.Admin.Models
 
         public Boolean Active { get; set; }
         public string CreatedBy { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy hh:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime CreatedOn { get; set; }
     }
 }

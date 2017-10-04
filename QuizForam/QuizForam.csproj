@@ -190,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\DAL.cs" />
+    <Content Include="App_Code\helper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -197,11 +198,13 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrganizationController.cs" />
     <Compile Include="Areas\Admin\Controllers\PlanController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StaffController.cs" />
     <Compile Include="Areas\Admin\Models\Master.cs" />
     <Compile Include="Areas\Admin\Models\Organization.cs" />
     <Compile Include="Areas\Admin\Models\Plan.cs" />
+    <Compile Include="Areas\Admin\Models\Staff.cs" />
+    <Compile Include="Areas\Admin\Models\Student.cs" />
     <Compile Include="Areas\Institute\InstituteAreaRegistration.cs" />
-    <Compile Include="Areas\Staff\StaffAreaRegistration.cs" />
     <Compile Include="Areas\Student\StudentAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filter\LoginFilter.cs" />
@@ -229,6 +232,7 @@
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\chosen.min.css" />
     <Content Include="assets\css\colorbox.min.css" />
+    <Content Include="assets\css\Custom.css" />
     <Content Include="assets\css\daterangepicker.min.css" />
     <Content Include="assets\css\dropzone.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -363,6 +367,7 @@
     <Content Include="Content\images\back_disabled.png" />
     <Content Include="Content\images\back_enabled.png" />
     <Content Include="Content\images\back_enabled_hover.png" />
+    <Content Include="Content\images\document-loader.gif" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\forward_disabled.png" />
     <Content Include="Content\images\forward_enabled.png" />
@@ -465,8 +470,8 @@
     <Content Include="Areas\Admin\Views\Plan\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\CreatePlan.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\EditPlan.cshtml" />
-    <Content Include="Areas\Staff\Views\web.config" />
     <Content Include="Areas\Institute\Views\web.config" />
+    <Content Include="Scripts\Admin\Staff.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Comman_Js\ApplicationManagement.js" />
@@ -583,6 +588,11 @@
     <Content Include="Areas\Admin\Views\Organization\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Organization\CreateOrganization.cshtml" />
     <Content Include="Areas\Admin\Views\Organization\EditOrganization.cshtml" />
+    <Content Include="Areas\Admin\Views\Plan\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\CreateStaff.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\EditStaff.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\View.cshtml" />
     <None Include="Properties\PublishProfiles\QuizForam.pubxml" />
     <None Include="Scripts\Default_Js\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\Default_Js\jquery-2.1.1.js" />
@@ -640,9 +650,6 @@
     <Folder Include="Areas\Institute\Controllers\" />
     <Folder Include="Areas\Institute\Models\" />
     <Folder Include="Areas\Institute\Views\Shared\" />
-    <Folder Include="Areas\Staff\Controllers\" />
-    <Folder Include="Areas\Staff\Models\" />
-    <Folder Include="Areas\Staff\Views\Shared\" />
     <Folder Include="Areas\Student\Controllers\" />
     <Folder Include="Areas\Student\Models\" />
     <Folder Include="Areas\Student\Views\Shared\" />
